@@ -1,0 +1,51 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.kensho.com/authentication
+docs: https://docs.kensho.com/authentication
+summary:
+  types: [http, oauth2]
+  http_scheme: bearer
+  api_key_in: []
+  oauth2_flows: [authorizationCode, clientCredentials, refreshToken]
+notes: >-
+  All Kensho product APIs (Scribe, Extract, NERD) authenticate with a bearer
+  access token in the Authorization header. Tokens are issued from the Kensho
+  services platform two ways: a personal token (Authentication Quickstart, for
+  development) and a production key pair (client ID + private key). The
+  LLM-ready API MCP surface adds full OAuth 2.0 with authorization code, client
+  credentials, and refresh/access-token flows, PKCE (S256), and dynamic client
+  registration (RFC 7591).
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  description: Bearer access token in the Authorization header for all product APIs.
+  applies_to: [scribe.kensho.com, extract.kensho.com, nerd.kensho.com, kfinance.kensho.com]
+- name: PersonalToken
+  type: http
+  scheme: bearer
+  description: Development-time personal token issued from the Kensho services platform.
+  docs: https://docs.kensho.com/authentication/personal-token
+- name: KeyPair
+  type: http
+  scheme: bearer
+  description: >-
+    Production authentication using a client ID and private key pair that is
+    exchanged for a short-lived bearer access token.
+  docs: https://docs.kensho.com/authentication/keypair
+- name: OAuth2
+  type: oauth2
+  description: OAuth 2.0 for the LLM-ready API hosted MCP server.
+  issuer: https://kfinance.kensho.com/integrations
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://kfinance.kensho.com/integrations/authorize
+    tokenUrl: https://kfinance.kensho.com/integrations/token
+    registrationUrl: https://kfinance.kensho.com/integrations/register
+    pkce: S256
+  - flow: clientCredentials
+    tokenUrl: https://kfinance.kensho.com/integrations/token
+  - flow: refreshToken
+    tokenUrl: https://kfinance.kensho.com/integrations/token
+  token_endpoint_auth_methods: [client_secret_post, client_secret_basic]
+  sources: [well-known/kensho-oauth-authorization-server.json]

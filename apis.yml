@@ -1,22 +1,193 @@
 aid: kensho
 name: Kensho
-description: Kensho is a company surfaced as a portfolio company of general-catalyst and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Kensho Technologies is the AI innovation hub of S&P Global, building machine
+  learning and AI systems that structure, connect, and extract meaning from the
+  world's financial and business data. Kensho's developer platform exposes a
+  suite of production APIs: Scribe for speech-to-text transcription of audio and
+  video, Extract for turning PDF documents into structured JSON, NERD for
+  named-entity recognition and disambiguation against Wikimedia and S&P Capital
+  IQ knowledge bases, and the LLM-ready API (kfinance) that connects LLMs,
+  agents, and AI applications to S&P Global's trusted data through Adaptive
+  Retrieval and a hosted, OAuth-secured Model Context Protocol (MCP) server.
+  Authentication is bearer-token based, issued from Kensho's services platform
+  via personal tokens or production key pairs, with OAuth 2.0 (authorization
+  code, client credentials, and refresh token flows, PKCE, and dynamic client
+  registration) for the MCP surface.
 url: https://raw.githubusercontent.com/api-evangelist/kensho/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://services.kensho.com/icons/favicon-32x32.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - general-catalyst
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-parent: sp-global
+x-tier: enriched
+x-tier-reason: portfolio-lead-enriched
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Artificial Intelligence
+- Machine Learning
+- Financial Data
+- Speech to Text
+- Transcription
+- Document Extraction
+- Named Entity Recognition
+- Natural Language Processing
+- LLM
+- Model Context Protocol
+- Retrieval
+- S&P Global
+apis:
+- name: Kensho Scribe
+  description: >-
+    Asynchronous speech-to-text transcription API that turns audio and video
+    into text with high accuracy. Supports batch, real-time, and
+    human-in-the-loop transcription, multipart and remote-URL submission, HEAD
+    polling for completion, and webhook callbacks.
+  humanURL: https://docs.kensho.com/scribe/v2/developer-guide
+  baseURL: https://scribe.kensho.com
+  tags:
+  - Speech to Text
+  - Transcription
+  - Audio
+  properties:
+  - type: Documentation
+    url: https://docs.kensho.com/scribe/v2/developer-guide
+  - type: APIReference
+    url: https://docs.kensho.com/scribe/v2/batch-api-specification
+- name: Kensho Extract
+  description: >-
+    Document intelligence API that transforms PDF documents into structured
+    JSON, with hierarchical extraction, optical character recognition (OCR),
+    enhanced table extraction, and bounding-box locations. Supports both direct
+    upload and a presigned upload/download URL flow for large documents.
+  humanURL: https://docs.kensho.com/extract/home
+  baseURL: https://extract.kensho.com
+  tags:
+  - Document Extraction
+  - PDF
+  - OCR
+  properties:
+  - type: Documentation
+    url: https://docs.kensho.com/extract/home
+  - type: APIReference
+    url: https://docs.kensho.com/extract/api
+- name: Kensho NERD
+  description: >-
+    Named Entity Recognition and Disambiguation API that identifies and links
+    concepts in text to knowledge bases (Wikimedia for general entities, S&P
+    Capital IQ for financial organizations and people), returning entity
+    positions, IDs, types, and confidence scores (ner_score and ned_score).
+  humanURL: https://docs.kensho.com/nerd/overview
+  baseURL: https://nerd.kensho.com
+  tags:
+  - Named Entity Recognition
+  - Entity Linking
+  - NLP
+  properties:
+  - type: Documentation
+    url: https://docs.kensho.com/nerd/overview
+  - type: APIReference
+    url: https://docs.kensho.com/nerd/api
+- name: Kensho LLM-ready API (kfinance)
+  description: >-
+    LLM-ready API that connects LLMs, agents, and AI applications to S&P
+    Global's trusted data through flexible retrieval, Adaptive Retrieval data
+    agents, a Python library (kensho-kfinance), and a hosted, OAuth-secured
+    Model Context Protocol (MCP) server.
+  humanURL: https://docs.kensho.com/llmreadyapi/overview
+  baseURL: https://kfinance.kensho.com
+  tags:
+  - LLM
+  - Retrieval
+  - Model Context Protocol
+  - Financial Data
+  properties:
+  - type: Documentation
+    url: https://docs.kensho.com/llmreadyapi/overview
+  - type: APIReference
+    url: https://docs.kensho.com/llmreadyapi/api
+  - type: MCPServer
+    url: https://kfinance.kensho.com/integrations/mcp
+common:
+- type: Website
+  url: https://kensho.com/
+- type: DeveloperPortal
+  url: https://docs.kensho.com/
+- type: Documentation
+  url: https://docs.kensho.com/
+- type: APIReference
+  url: https://docs.kensho.com/llmreadyapi/api
+- type: GettingStarted
+  url: https://docs.kensho.com/authentication/personal-token
+- type: Authentication
+  url: authentication/kensho-authentication.yml
+- type: OAuthScopes
+  url: scopes/kensho-scopes.yml
+- type: SignUp
+  url: https://services.kensho.com/free-trial
+- type: Support
+  url: https://docs.kensho.com/llmreadyapi/support
+- type: ChangeLog
+  url: https://docs.kensho.com/llmreadyapi/release-notes
+- type: GitHubOrganization
+  url: https://github.com/kensho-technologies
+- type: StatusPage
+  url: https://status.kensho.com/
+- type: TrustCenter
+  url: https://trust.kensho.com/
+- type: Compliance
+  url: https://trust.kensho.com/
+- type: MCPServer
+  url: mcp/kensho-mcp.yml
+- type: WellKnown
+  url: well-known/kensho-well-known.yml
+- type: SecurityTxt
+  url: well-known/kensho-well-known.yml
+- type: Packages
+  url: packages/kensho-packages.yml
+- type: SDKs
+  url: packages/kensho-packages.yml
+- type: Conventions
+  url: conventions/kensho-conventions.yml
+- type: Conformance
+  url: conformance/kensho-conformance.yml
+- type: Lifecycle
+  url: lifecycle/kensho-lifecycle.yml
+- type: ChangeLog
+  url: changelog/kensho-changelog.yml
+- type: Webhooks
+  url: asyncapi/kensho-scribe-webhooks.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: ErrorCatalog
+  url: errors/kensho-problem-types.yml
+- type: LLMsTxt
+  url: llms/kensho-llms.txt
+- type: DomainSecurity
+  url: security/kensho-domain-security.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

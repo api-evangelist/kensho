@@ -1,0 +1,44 @@
+generated: '2026-07-19'
+method: searched
+source: https://kfinance.kensho.com/.well-known/
+notes: >-
+  The LLM-ready API MCP host (kfinance.kensho.com) publishes RFC 8414 OAuth
+  authorization server metadata and RFC 9728 OAuth protected-resource metadata
+  for its hosted MCP server. The marketing/services hosts (kensho.com,
+  docs.kensho.com, services.kensho.com) return the SPA shell (soft-200 / 404)
+  for all probed well-known paths, so no security.txt or api-catalog is
+  published there.
+hosts:
+- host: https://kfinance.kensho.com
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: kensho-oauth-authorization-server.json
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: kensho-oauth-protected-resource.json
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://services.kensho.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    note: returns SPA HTML shell, not a discovery document (soft-200)
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    note: returns SPA HTML shell, not a discovery document (soft-200)
+  - path: /.well-known/api-catalog
+    status: 200
+    note: returns SPA HTML shell, not a catalog document (soft-200)
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://docs.kensho.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 404

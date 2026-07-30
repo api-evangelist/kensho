@@ -1,0 +1,42 @@
+generated: '2026-07-19'
+method: searched
+source: https://kfinance.kensho.com/.well-known/oauth-authorization-server
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    LLM-ready API MCP host publishes OAuth 2.0 authorization server metadata with
+    authorization_code, refresh_token, and client_credentials flows.
+- id: rfc8414-oauth-authorization-server-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns valid metadata JSON.
+- id: rfc9728-oauth-protected-resource-metadata
+  conforms: true
+  evidence: /.well-known/oauth-protected-resource returns valid resource metadata JSON.
+- id: rfc7591-dynamic-client-registration
+  conforms: true
+  evidence: registration_endpoint advertised at .../integrations/register.
+- id: rfc7636-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256.
+- id: oidc
+  conforms: partial
+  evidence: >-
+    offline_access scope supported; no openid-configuration discovery document
+    published (404).
+- id: mcp
+  conforms: true
+  evidence: >-
+    Hosted Model Context Protocol server at kfinance.kensho.com/integrations/mcp
+    with streamable-http transport and OAuth-protected resource metadata.
+- id: soc2
+  conforms: true
+  evidence: >-
+    SOC 2 stated on the Kensho Trust Center (trust.kensho.com, SafeBase/Drata).
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json error envelope documented.
+- id: fhir
+  conforms: false
+- id: fapi
+  conforms: false

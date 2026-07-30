@@ -1,0 +1,17 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.kensho.com/scribe/v2/batch-development
+spec_type: Webhooks
+notes: >-
+  Kensho Scribe supports webhook callbacks for asynchronous batch transcription.
+  A client passes a callback_uri parameter when submitting a transcription; when
+  the job finishes, Scribe delivers a notification to that URI (an alternative to
+  HEAD/GET polling). Kensho does not publish an AsyncAPI document for this
+  surface, so this artifact captures the webhook catalog only.
+webhooks:
+- name: transcription.completed
+  api: Kensho Scribe
+  trigger: A submitted batch transcription job finishes processing.
+  delivery: HTTP callback to the client-supplied callback_uri
+  subscribe_via: callback_uri parameter on POST https://scribe.kensho.com/api/v2/transcription
+  retrieve_result: GET https://scribe.kensho.com/api/v2/transcription with the transcription_id

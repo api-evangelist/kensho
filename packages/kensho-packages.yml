@@ -1,0 +1,18 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.kensho.com/llmreadyapi/python-library
+packages:
+- language: python
+  registry: pypi
+  name: kensho-kfinance
+  url: https://pypi.org/project/kensho-kfinance/
+  install: pip install kensho-kfinance
+  official: true
+  description: >-
+    Official Python library for the Kensho / S&P Global LLM-ready API. Provides
+    a simple interface for API requests and response handling, supports refresh
+    token, key pair, and interactive browser authentication, and ships an MCP
+    server entrypoint (python -m kfinance.mcp) with stdio, SSE, and
+    streamable-http transports.
+  docs: https://kensho-kfinance.readthedocs.io/en/stable/
+  source_code: https://github.com/kensho-technologies/kfinance

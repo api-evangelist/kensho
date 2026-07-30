@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.kensho.com/agentskills
+notes: >-
+  S&P Global Agent Skills are provider-published, pre-built agent skills built on
+  open standards (MCP) and designed to work across AI platforms and agent
+  frameworks. They are distributed as a Claude Desktop plugin ("Sp global" in
+  Browse Plugins), as individual uploadable skill files, and as a Claude Code
+  plugin-marketplace source; each skill is backed by the S&P Global LLM-ready API
+  / Capital IQ Pro. Skill bodies are distributed by the vendor and not reproduced
+  here verbatim.
+distribution:
+  claude_desktop_plugin: '"Sp global" in Browse Plugins (requires a paid Claude plan)'
+  claude_code: add the S&P Global repository as a plugin marketplace source
+  other_platforms: load skills as markdown via custom instructions / knowledge uploads
+  requires: Capital IQ Pro or S&P Global LLM-ready API subscription
+skills:
+- name: Tearsheets
+  description: >-
+    Generates formatted one-to-two page company profiles as Word documents using
+    S&P Capital IQ data. Four audience types: Equity Research, Investment
+    Banking/M&A, Corporate Development, and Sales/Business Development.
+  api: Kensho LLM-ready API (kfinance)
+  source: https://docs.kensho.com/agentskills
+- name: Industry Transaction Summaries
+  description: >-
+    Summarizes recent funding activity within a sector or for a specific company,
+    drawing on S&P Capital IQ transaction data for market mapping and competitive
+    intelligence.
+  api: Kensho LLM-ready API (kfinance)
+  source: https://docs.kensho.com/agentskills
+- name: Earnings Previews
+  description: >-
+    Produces structured earnings previews with consensus estimates, guidance,
+    analyst sentiment, and key monitoring points from S&P Capital IQ.
+  api: Kensho LLM-ready API (kfinance)
+  source: https://docs.kensho.com/agentskills

@@ -1,0 +1,56 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.kensho.com/
+notes: >-
+  Cross-cutting request/response semantics for the Kensho product APIs, captured
+  from the developer documentation. Kensho's Scribe, Extract, and NERD APIs are
+  asynchronous job APIs: a client submits work, receives a job/transcription/
+  request id, then polls (or receives a webhook) for completion.
+authentication:
+  style: bearer-token
+  header: Authorization
+  detail: See authentication/kensho-authentication.yml
+async_jobs:
+  pattern: submit-then-poll
+  description: >-
+    Work is submitted with POST and returns an identifier (transcription_id,
+    job_id, request_id). Completion is checked by polling the same resource.
+  status_signaling:
+    scribe:
+      method: HEAD or GET on the transcription resource
+      codes: {200: complete, 202: still processing}
+    nerd:
+      method: GET on /api/v1/annotations-async with job_id
+      states: [success, pending]
+    extract:
+      method: GET /v3/extractions/download-url/{request_id}
+  webhooks:
+    supported: true
+    detail: >-
+      Scribe accepts a callback_uri parameter to receive a webhook when a
+      transcription finishes (see asyncapi/kensho-scribe-webhooks.yml).
+content_negotiation:
+  detail: >-
+    Scribe returns JSON transcripts by default; the Accept header selects
+    alternative output formats (e.g. Word documents). Extract output format is
+    controlled by request parameters (structured_document_with_locations, etc.).
+versioning:
+  scheme: uri-path
+  detail: >-
+    Each product carries its own path version: Scribe /api/v2 (and legacy
+    /api/v1), NERD /api/v1, Extract /v3. See lifecycle/kensho-lifecycle.yml.
+idempotency:
+  supported: unknown
+  detail: >-
+    No idempotency-key contract is documented in the public developer docs for
+    the product APIs; not asserted.
+pagination:
+  supported: not-applicable
+  detail: >-
+    The product APIs are single-job request/response; no list-pagination
+    contract is documented.
+cross_links:
+  authentication: authentication/kensho-authentication.yml
+  errors: errors/kensho-problem-types.yml
+  lifecycle: lifecycle/kensho-lifecycle.yml
+  webhooks: asyncapi/kensho-scribe-webhooks.yml

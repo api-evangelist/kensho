@@ -1,0 +1,19 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.kensho.com/
+format: http-status
+notes: >-
+  Kensho does not publish an RFC 9457 problem+json error registry. These are the
+  HTTP status semantics documented for the asynchronous product APIs (used for
+  job-status signaling as much as for errors). No public OpenAPI is available to
+  enumerate 4xx/5xx response bodies.
+problems:
+- status: 200
+  meaning: Request succeeded / job complete (Scribe HEAD returns 200 when a transcription is ready).
+- status: 202
+  meaning: Accepted / still processing (Scribe HEAD returns 202 while a transcription is in progress).
+- status: 401
+  meaning: >-
+    Unauthorized — missing or invalid bearer access token. Observed on
+    scribe.kensho.com when calling without credentials.
+  remediation: Obtain a bearer token via personal token or key pair and send it in the Authorization header.

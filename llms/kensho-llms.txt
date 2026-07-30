@@ -1,0 +1,31 @@
+# Kensho
+
+> Kensho Technologies is the AI innovation hub of S&P Global, offering production APIs that structure, connect, and extract meaning from financial and business data. Authentication is bearer-token based (personal token or production key pair), with OAuth 2.0 for the LLM-ready API MCP surface.
+
+## APIs
+
+- [Kensho Scribe](https://docs.kensho.com/scribe/v2/developer-guide): Speech-to-text transcription (audio/video) — base https://scribe.kensho.com, POST/GET/HEAD /api/v2/transcription, webhook callbacks.
+- [Kensho Extract](https://docs.kensho.com/extract/home): PDF-to-structured-JSON extraction with OCR and tables — base https://extract.kensho.com, /v3/extractions.
+- [Kensho NERD](https://docs.kensho.com/nerd/overview): Named entity recognition and disambiguation (Wikimedia + Capital IQ) — base https://nerd.kensho.com, /api/v1/annotations-async.
+- [Kensho LLM-ready API (kfinance)](https://docs.kensho.com/llmreadyapi/overview): Connect LLMs and agents to S&P Global data via Adaptive Retrieval and a hosted MCP server — base https://kfinance.kensho.com.
+
+## MCP
+
+- [Hosted MCP Server](https://kfinance.kensho.com/integrations/mcp): OAuth-secured, streamable-http. Metadata at https://kfinance.kensho.com/.well-known/oauth-protected-resource.
+- [MCP Integration Guides](https://docs.kensho.com/llmreadyapi/mcp): Claude, ChatGPT, Microsoft Copilot, Amazon Quick Suite, Databricks, Mistral.
+- [S&P Global Agent Skills](https://docs.kensho.com/agentskills): Tearsheets, Industry Transaction Summaries, Earnings Previews.
+
+## Docs
+
+- [Developer Documentation](https://docs.kensho.com/)
+- [Authentication Quickstart (personal token)](https://docs.kensho.com/authentication/personal-token)
+- [Production Authentication (key pair)](https://docs.kensho.com/authentication/keypair)
+- [Python Library (kensho-kfinance)](https://kensho-kfinance.readthedocs.io/en/stable/)
+- [Release Notes](https://docs.kensho.com/llmreadyapi/release-notes)
+
+## Operations
+
+- [Status Page](https://status.kensho.com/)
+- [Trust Center (SOC 2)](https://trust.kensho.com/)
+- [Free Trial / Sign Up](https://services.kensho.com/free-trial)
+- [GitHub](https://github.com/kensho-technologies)

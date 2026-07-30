@@ -1,0 +1,14 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.kensho.com/llmreadyapi/release-notes
+scheme: uri-path-major-versions
+current_version:
+  scribe: v2
+  nerd: v1
+  extract: v3
+notes: >-
+  Kensho publishes dated release notes for the LLM-ready API. The release-notes
+  page is a JavaScript-rendered docs view; individual dated entries are not
+  captured here to avoid transcription without a verified snapshot. The live
+  page is the source of truth.
+entries: []

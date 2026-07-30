@@ -1,0 +1,23 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.kensho.com/
+versioning:
+  scheme: uri-path
+  detail: >-
+    Each product API is versioned in its URL path and Kensho maintains prior
+    versions alongside new ones (Scribe ships both V2 and V1 with dedicated docs).
+  per_api:
+    scribe: {current: v2, legacy: [v1], base: https://scribe.kensho.com/api}
+    nerd: {current: v1, base: https://nerd.kensho.com/api}
+    extract: {current: v3, base: https://extract.kensho.com}
+    llm_ready_api: {docs: https://docs.kensho.com/llmreadyapi/overview}
+deprecation:
+  policy_url: null
+  detail: >-
+    No formal deprecation/sunset policy published; older major versions (Scribe
+    V1) remain documented rather than removed.
+release_notes: https://docs.kensho.com/llmreadyapi/release-notes
+status_page: https://status.kensho.com/
+sla:
+  url: null
+deprecated_operations: []

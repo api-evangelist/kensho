@@ -1,0 +1,17 @@
+generated: '2026-07-19'
+method: searched
+source: https://trust.kensho.com/
+url: https://trust.kensho.com/
+platform: SafeBase
+compliance_automation: Drata
+certifications:
+- SOC 2
+notes: >-
+  Kensho operates a public Trust Center at trust.kensho.com (SafeBase-powered,
+  Drata compliance automation). SOC 2 is stated in the pre-rendered page. The
+  full certification/subprocessor list is behind a JavaScript-rendered SafeBase
+  widget and an access-request gate, so only SOC 2 is captured here as verified;
+  additional certifications may require requesting access.
+evidence:
+- source: https://trust.kensho.com/
+  keywords: [soc 2, trust center, safebase, drata]

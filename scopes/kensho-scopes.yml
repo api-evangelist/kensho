@@ -1,0 +1,29 @@
+generated: '2026-07-19'
+method: searched
+source: https://kfinance.kensho.com/.well-known/oauth-authorization-server
+docs: https://docs.kensho.com/llmreadyapi/mcp/custom/oauth-client-credentials
+schemes:
+- name: OAuth2
+  source: well-known/kensho-oauth-authorization-server.json
+  issuer: https://kfinance.kensho.com/integrations
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://kfinance.kensho.com/integrations/authorize
+    tokenUrl: https://kfinance.kensho.com/integrations/token
+  - flow: clientCredentials
+    tokenUrl: https://kfinance.kensho.com/integrations/token
+  - flow: refreshToken
+    tokenUrl: https://kfinance.kensho.com/integrations/token
+scopes:
+- scope: kensho:app:kfinance
+  description: >-
+    Access to the Kensho LLM-ready API (kfinance) application and its S&P Global
+    financial-data retrieval surface via the hosted MCP server.
+  flows: [authorizationCode, clientCredentials, refreshToken]
+  sources: [well-known/kensho-oauth-authorization-server.json]
+- scope: offline_access
+  description: >-
+    Issue a refresh token so the client can obtain new access tokens without
+    re-authorization (OpenID Connect / OAuth 2.0 offline access).
+  flows: [authorizationCode, refreshToken]
+  sources: [well-known/kensho-oauth-authorization-server.json]

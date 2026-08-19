@@ -4,10 +4,9 @@ status: published
 source: https://docs.kensho.com/llmreadyapi/mcp
 server:
   name: kensho-kfinance
-  description: >-
-    Official hosted Model Context Protocol (MCP) server for the Kensho / S&P
-    Global LLM-ready API (kfinance). Exposes S&P Global's trusted financial data
-    to LLMs and agents. Verified via RFC 9728 protected-resource metadata.
+  description: Official hosted Model Context Protocol (MCP) server for the Kensho / S&P Global LLM-ready
+    API (kfinance). Exposes S&P Global's trusted financial data to LLMs and agents. Verified via RFC 9728
+    protected-resource metadata.
   transport: streamable-http
   url: https://kfinance.kensho.com/integrations/mcp
   authorization:
@@ -17,18 +16,24 @@ server:
     authorization_endpoint: https://kfinance.kensho.com/integrations/authorize
     token_endpoint: https://kfinance.kensho.com/integrations/token
     registration_endpoint: https://kfinance.kensho.com/integrations/register
-    grant_types: [authorization_code, refresh_token]
-    scopes: [kensho:app:kfinance, offline_access]
+    grant_types:
+    - authorization_code
+    - refresh_token
+    scopes:
+    - kensho:app:kfinance
+    - offline_access
     pkce: S256
-    bearer_methods: [header]
+    bearer_methods:
+    - header
   also_runnable_locally:
     package: kensho-kfinance
     command: python -m kfinance.mcp
-    transports: [stdio, sse, streamable-http]
+    transports:
+    - stdio
+    - sse
+    - streamable-http
 integrations:
-  description: >-
-    Kensho documents first-party MCP integration guides for third-party AI
-    platforms.
+  description: Kensho documents first-party MCP integration guides for third-party AI platforms.
   platforms:
   - Claude
   - ChatGPT
@@ -37,7 +42,13 @@ integrations:
   - Databricks
   - Mistral (Beta)
 tools:
-  note: >-
-    Tool list is exposed dynamically by the hosted MCP server and gated behind
-    OAuth; not enumerated here without an authenticated session. The server
-    wraps the LLM-ready API (kfinance) financial-data retrieval surface.
+  note: Tool list is exposed dynamically by the hosted MCP server and gated behind OAuth; not enumerated
+    here without an authenticated session. The server wraps the LLM-ready API (kfinance) financial-data
+    retrieval surface.
+deployment:
+  mode: remote
+  endpoint: https://kfinance.kensho.com/integrations/mcp
+  verified: probed
+  probe: gated
+  checked: '2026-08-12'
+  source: catalog MCP census

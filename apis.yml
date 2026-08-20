@@ -41,6 +41,20 @@ modified: '2026-07-19'
 tags:
 - Company
 - Artificial Intelligence
+- Machine-Learning
+- Financial Data
+- Speech-to-Text
+- Transcription
+- Document Extraction
+- Named Entity Recognition
+- Natural Language Processing
+- LLM
+- MCP
+- Retrieval
+- S&P Global
+tags_raw:
+- Company
+- Artificial Intelligence
 - Machine Learning
 - Financial Data
 - Speech to Text
@@ -62,6 +76,10 @@ apis:
   humanURL: https://docs.kensho.com/scribe/v2/developer-guide
   baseURL: https://scribe.kensho.com
   tags:
+  - Speech-to-Text
+  - Transcription
+  - Audio
+  tags_raw:
   - Speech to Text
   - Transcription
   - Audio
@@ -113,6 +131,11 @@ apis:
   humanURL: https://docs.kensho.com/llmreadyapi/overview
   baseURL: https://kfinance.kensho.com
   tags:
+  - LLM
+  - Retrieval
+  - MCP
+  - Financial Data
+  tags_raw:
   - LLM
   - Retrieval
   - Model Context Protocol

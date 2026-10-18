@@ -131,6 +131,10 @@ apis:
   tags:
   - Named Entity Recognition
   - Entity Linking
+  - Natural Language Processing
+  tags_raw:
+  - Named Entity Recognition
+  - Entity Linking
   - NLP
   properties:
   - type: Documentation

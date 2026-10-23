@@ -59,6 +59,36 @@ edges:
     detected: '2026-10-20'
   detected_by: sweep-official-clis.py
   first_seen: '2026-10-20'
+- partner_name: Hugging Face (hugging-face-hub)
+  partner: hugging-face
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: hugging-face-hub
+  evidence: https://huggingface.co/kensho
+  mirror_of: hugging-face/integrations/hugging-face-integration-edges.yml
+  apps:
+  - kensho/DocFinQA
+  - kensho/PubTables-v2
+  - kensho/SPGISpeech2.0
+  - kensho/spgispeech
+  - kensho/WILD-raw
+  - kensho/WILD
+  - kensho/bizbench
+  - kensho/VERDICTS
+  - kensho/5gram-spanish-kenLM
+  - kensho/beamsearch_decoder_dummy
+  - kensho/dummy_full_language_model
+  - kensho/POTATR-v1.1-Pub
+  listing_count: 2
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Hugging Face Hub datasets
+  badges:
+  - Verified publisher (Hugging Face verified organisation)
 generated: '2026-10-18'
 method: searched
 source:
@@ -82,3 +112,4 @@ checked:
 - https://registry.npmjs.org
 - https://repo1.maven.org/maven2
 - https://rubygems.org/api/v1
+- hugging-face/integrations/hugging-face-integration-edges.yml
